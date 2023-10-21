@@ -1,0 +1,24 @@
+References
+  ----------
+  https://www.mathsisfun.com/definitions/mean.html
+  https://www.mathsisfun.com/data/standard-deviation.html
+  https://www.mathsisfun.com/data/standard-normal-distribution.html
+  https://www.mathsisfun.com/data/percentage-distribution.html
+  https://www.mathsisfun.com/data/quartiles.html
+  https://www.mathsisfun.com/data/standard-score.html
+  https://www.mathsisfun.com/data/correlation.html
+  https://www.mathsisfun.com/data/sampling.html
+  https://www.mathsisfun.com/data/confidence-interval.html
+  https://www.mathsisfun.com/data/t-test.html
+  https://www.mathsisfun.com/data/chi-square-test.html
+  https://www.mathsisfun.com/data/f-test.html
+  https://www.mathsisfun.com/data/linear-regression.html
+  https://www.mathsisfun.com/data/exponential-regression.html
+  https://www.mathsisfun.com/data/logarithmic-regression.html
+  https://www.mathsisfun.com/data/least-squares-regression.html
+  https://www.mathsisfun.com/data/correlation-regression.html
+  https://www.mathsisfun.com/data/linear-quadratic-regression.html
+  https://www.mathsisfun.com/data/linear-exponential-regression.html
+  https://www.mathsisfun.com/data/linear-logarithmic-regression.html
+  https://www.mathsisfun.com/data/moving-average.html
+  https://www.mathsisfun.com/data/weighted-mean.html
