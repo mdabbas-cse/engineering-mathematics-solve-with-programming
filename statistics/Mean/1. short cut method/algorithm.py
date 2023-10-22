@@ -52,7 +52,7 @@ from rich.table import Table
 classRange = input('Enter the class range (separated by space: Like 0-10 10-20 ....): ').split(' ')
 
 # frequency input from user
-frequency = list(map(int, input('Enter the frequency (separated by space: Like 1, 2, 3 ...): ').split(' ')))
+frequency = list(map(int, input('Enter the frequency (separated by space: Like 1 2 3 ...): ').split(' ')))
 
 # method for calculating arithmetic mean
 def arithmeticMeanShortCutMethod(classRange, frequency):
