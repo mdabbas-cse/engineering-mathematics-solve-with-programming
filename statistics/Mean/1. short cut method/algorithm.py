@@ -49,78 +49,84 @@ from rich.table import Table
 
 
 # classRange input from user
-classRange = input('Enter the class range (separated by space: Like 0-10 10-20 ....): ').split(' ')
+classRange = input(
+    'Enter the class range (separated by space: Like 0-10 10-20 ....): ').split(' ')
 
 # frequency input from user
-frequency = list(map(int, input('Enter the frequency (separated by space: Like 1 2 3 ...): ').split(' ')))
+frequency = list(map(int, input(
+    'Enter the frequency (separated by space: Like 1 2 3 ...): ').split(' ')))
 
 # method for calculating arithmetic mean
+
+
 def arithmeticMeanShortCutMethod(classRange, frequency):
-  # calculate the assumed mean
-  classRangeFirstValue = classRange[0].split('-')[0]
-  classRangeLastValue = classRange[-1].split('-')[1]
-  assumedMean = (int(classRangeFirstValue) + int(classRangeLastValue)) / 2
+    # calculate the assumed mean
+    classRangeFirstValue = classRange[0].split('-')[0]
+    classRangeLastValue = classRange[-1].split('-')[1]
+    assumedMean = (int(classRangeFirstValue) + int(classRangeLastValue)) / 2
 
-  # calculate the mid value
-  midValue = []
-  for i in classRange:
-    [start, end] = i.split('-')
-    mid = (int(start) + int(end)) / 2
-    midValue.append(mid)
-  
-  # calculate the deviation
-  deviation = []
-  for x in midValue:
-    d = x - assumedMean
-    deviation.append(d)
+    # calculate the mid value
+    midValue = []
+    for i in classRange:
+        [start, end] = i.split('-')
+        mid = (int(start) + int(end)) / 2
+        midValue.append(mid)
 
-  # calculate the frequency and deviation
-  fd = []
-  for i in range(len(frequency)):
-    multiply = frequency[i] * deviation[i]
-    fd.append(multiply)
-  
-  # calculate the sum of frequency and deviation
-  sumOfFrequency = sum(frequency)
-  sumOfDeviation = sum(fd)
+    # calculate the deviation
+    deviation = []
+    for x in midValue:
+        d = x - assumedMean
+        deviation.append(d)
 
-  # calculate the arithmetic mean
-  arithmeticMean = assumedMean + (sumOfDeviation / sumOfFrequency)
+    # calculate the frequency and deviation
+    fd = []
+    for i in range(len(frequency)):
+        multiply = frequency[i] * deviation[i]
+        fd.append(multiply)
 
-  # print the table
-  # print the table title
-  table = Table(
-    title="Arithmetic Mean (Short Cut Method)", 
-    show_header=True, 
-    header_style="bold magenta", 
-    title_style="bold green"
-  )
+    # calculate the sum of frequency and deviation
+    sumOfFrequency = sum(frequency)
+    sumOfDeviation = sum(fd)
 
-  # print the table columns
-  columns = ["Class Range", "Frequency(f)", "Mid Value(x)", "Deviation(d)", "Frequency * Deviation(fd)"]
-  for column in columns:
-    table.add_column(column)
+    # calculate the arithmetic mean
+    arithmeticMean = assumedMean + (sumOfDeviation / sumOfFrequency)
 
-  # print the table rows
-  for i in range(len(classRange)):
-    table.add_row(
-      classRange[i], 
-      str(frequency[i]), 
-      str(midValue[i]), 
-      str(deviation[i]), 
-      str(fd[i]), 
-      style='bright_green'
+    # print the table
+    # print the table title
+    table = Table(
+        title="Arithmetic Mean (Short Cut Method)",
+        show_header=True,
+        header_style="bold magenta",
+        title_style="bold green"
     )
 
-  # print the table footer row and put value in footer row
-  table.add_row('Total', str(sumOfFrequency), '', '', str(sumOfDeviation))
+    # print the table columns
+    columns = ["Class Range", "Frequency(f)", "Mid Value(x)",
+               "Deviation(d)", "Frequency * Deviation(fd)"]
+    for column in columns:
+        table.add_column(column)
 
-  # print the table
-  console = Console()
-  console.print(table)
+    # print the table rows
+    for i in range(len(classRange)):
+        table.add_row(
+            classRange[i],
+            str(frequency[i]),
+            str(midValue[i]),
+            str(deviation[i]),
+            str(fd[i]),
+            style='bright_green'
+        )
 
-  # return the result
-  return arithmeticMean
+    # print the table footer row and put value in footer row
+    table.add_row('Total', str(sumOfFrequency), '', '', str(sumOfDeviation))
+
+    # print the table
+    console = Console()
+    console.print(table)
+
+    # return the result
+    return arithmeticMean
+
 
 # calling the arithmeticMeanShortCutMethod() method
 arithmeticMean = arithmeticMeanShortCutMethod(classRange, frequency)
