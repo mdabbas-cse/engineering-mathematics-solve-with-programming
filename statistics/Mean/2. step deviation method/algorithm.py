@@ -33,11 +33,11 @@
 """
 
 # input from user
-# classRange = input('Enter the class range (separated by space: Like 0-10 10-20 ....): ').split('-')
-# frequency = list(map(int, input('Enter the frequency (separated by space: Like 1 2 3 ...): ').split(' ')))
+classRange = input('Enter the class range (separated by space: Like 0-10 10-20 ....): ').split(' ')
+frequency = list(map(int, input('Enter the frequency (separated by space: Like 1 2 3 ...): ').split(' ')))
 
-classRange = ['0-10', '10-20', '20-30', '30-40', '40-50']
-frequency = [7, 8, 20, 10, 5]
+# classRange = ['0-10', '10-20', '20-30', '30-40', '40-50']
+# frequency = [7, 8, 20, 10, 5]
 
 # method for calculating arithmetic mean
 def arithmeticMeanStepDeviationMethod(classRange, frequency):
@@ -47,6 +47,7 @@ def arithmeticMeanStepDeviationMethod(classRange, frequency):
 
   # get class range last value
   classRangeLastValue = classRange[-1].split('-')[1]
+  print(classRangeLastValue)
 
   # calculate the assumed mean (a)
   assumedMean = (int(classRangeFirstValue) + int(classRangeLastValue)) / 2
